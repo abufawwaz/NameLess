@@ -1,13 +1,18 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion compile_sdk_version.toInteger()
+    compileSdkVersion build_versions.target_sdk
 
     defaultConfig {
-        minSdkVersion min_sdk_version.toInteger()
-        targetSdkVersion target_sdt_version.toInteger()
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -20,5 +25,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.android.support:appcompat-v7:$support_version"
+
+    api deps.support.app_compat
 }

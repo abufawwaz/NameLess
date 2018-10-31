@@ -4,27 +4,31 @@ if (isRunAlone.toBoolean()) {
     apply plugin: 'com.android.library'
 }
 
-
 android {
-    compileSdkVersion compile_sdk_version.toInteger()
+    compileSdkVersion build_versions.target_sdk
 
     defaultConfig {
         if (isRunAlone.toBoolean()) {
             // 单独调试时添加 applicationId ，集成调试时移除
-            applicationId "com.loong.login"
+            applicationId "com.sslyxhz.share"
         }
-        minSdkVersion min_sdk_version.toInteger()
-        targetSdkVersion target_sdt_version.toInteger()
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
             }
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
@@ -50,5 +54,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project (':base')
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+
+    annotationProcessor deps.arouter_compiler
 }
