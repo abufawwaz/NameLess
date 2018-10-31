@@ -31,9 +31,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api deps.arouter_api
     // arouter-compiler 的注解依赖需要所有使用 ARouter 的 model 都添加依赖
@@ -41,5 +38,5 @@ dependencies {
 
     api deps.constraint_layout
 
-    api project (':basecomponent')
+    api project (':lib_base_component')
 }

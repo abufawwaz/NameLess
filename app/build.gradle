@@ -34,9 +34,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.0'
-    implementation project(':base')
-    runtimeOnly project(':login')
-    runtimeOnly project(':share')
+
+    annotationProcessor deps.arouter_compiler
+
+    implementation deps.support.app_compat
+
+    implementation project(':lib_base_module')
+    runtimeOnly project(':module_login')
+    runtimeOnly project(':module_share')
 }
