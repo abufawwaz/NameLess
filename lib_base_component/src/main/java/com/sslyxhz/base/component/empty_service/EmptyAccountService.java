@@ -1,11 +1,11 @@
-package com.sslyxhz.basecomponent.empty_service;
+package com.sslyxhz.base.component.empty_service;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-import com.sslyxhz.basecomponent.service.IAccountService;
+import com.sslyxhz.base.component.service.IAccountService;
 
 public class EmptyAccountService implements IAccountService {
     @Override

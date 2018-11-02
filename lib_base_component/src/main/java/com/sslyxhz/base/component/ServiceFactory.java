@@ -1,7 +1,7 @@
-package com.sslyxhz.basecomponent;
+package com.sslyxhz.base.component;
 
-import com.sslyxhz.basecomponent.empty_service.EmptyAccountService;
-import com.sslyxhz.basecomponent.service.IAccountService;
+import com.sslyxhz.base.component.empty_service.EmptyAccountService;
+import com.sslyxhz.base.component.service.IAccountService;
 
 public class ServiceFactory {
 

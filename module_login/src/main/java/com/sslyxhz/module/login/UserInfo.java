@@ -1,4 +1,4 @@
-package com.sslyxhz.login;
+package com.sslyxhz.module.login;
 
 public class UserInfo {
     private String accountId;

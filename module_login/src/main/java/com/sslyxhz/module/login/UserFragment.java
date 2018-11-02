@@ -1,4 +1,4 @@
-package com.sslyxhz.login;
+package com.sslyxhz.module.login;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

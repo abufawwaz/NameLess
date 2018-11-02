@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         if (isRunAlone.toBoolean()) {
-            applicationId "com.sslyxhz.login"
+            applicationId "com.sslyxhz.module.login"
         }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk

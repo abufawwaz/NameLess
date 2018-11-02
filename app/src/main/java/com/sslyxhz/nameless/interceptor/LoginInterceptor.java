@@ -6,7 +6,7 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Interceptor;
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
-import com.sslyxhz.basecomponent.ServiceFactory;
+import com.sslyxhz.base.component.ServiceFactory;
 
 @Interceptor(priority = 8, name = "登录状态拦截器")
 public class LoginInterceptor implements IInterceptor {

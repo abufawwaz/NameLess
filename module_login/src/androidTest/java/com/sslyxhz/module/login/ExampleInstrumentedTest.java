@@ -1,4 +1,4 @@
-package com.sslyxhz.share;
+package com.sslyxhz.module.login;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.sslyxhz.share", appContext.getPackageName());
+        assertEquals("com.sslyxhz.module.login", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.sslyxhz.share;
+package com.sslyxhz.module.login;
 
 import org.junit.Test;
 

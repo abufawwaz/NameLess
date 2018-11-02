@@ -1,4 +1,4 @@
-package com.sslyxhz.login;
+package com.sslyxhz.module.login;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.sslyxhz.basecomponent.service.IAccountService;
+import com.sslyxhz.base.component.service.IAccountService;
 
 public class AccountService implements IAccountService {
     @Override

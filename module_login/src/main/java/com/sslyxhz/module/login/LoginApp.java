@@ -1,9 +1,9 @@
-package com.sslyxhz.login;
+package com.sslyxhz.module.login;
 
 import android.app.Application;
 
 import com.sslyxhz.base.BaseApp;
-import com.sslyxhz.basecomponent.ServiceFactory;
+import com.sslyxhz.base.component.ServiceFactory;
 
 public class LoginApp extends BaseApp {
 

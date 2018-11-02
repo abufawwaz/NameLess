@@ -10,7 +10,7 @@ android {
     defaultConfig {
         if (isRunAlone.toBoolean()) {
             // 单独调试时添加 applicationId ，集成调试时移除
-            applicationId "com.sslyxhz.share"
+            applicationId "com.sslyxhz.module.share"
         }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk

@@ -1,4 +1,4 @@
-package com.sslyxhz.basecomponent.service;
+package com.sslyxhz.base.component.service;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.sslyxhz.share;
+package com.sslyxhz.module.share;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.sslyxhz.basecomponent.ServiceFactory;
+import com.sslyxhz.base.component.ServiceFactory;
 
 @Route(path = "/share/share")
 public class ShareActivity extends AppCompatActivity {
