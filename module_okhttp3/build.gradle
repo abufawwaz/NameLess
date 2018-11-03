@@ -9,14 +9,15 @@ android {
 
     defaultConfig {
         if (isRunAlone.toBoolean()) {
-            applicationId "com.sslyxhz.module.share"
+            applicationId "com.sslyxhz.module.okhttp3demo"
         }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
 
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -47,12 +48,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation project (':lib_base_module')
 
     annotationProcessor deps.arouter_compiler
+
+    implementation deps.support.app_compat
+    implementation deps.constraint_layout
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation deps.okhttp3
+    implementation deps.gson
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+
+    implementation deps.retrofit.adapters
+    implementation deps.retrofit.adapter_rxjava
+
+//    implementation deps.rxjava2
 }
