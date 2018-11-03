@@ -1,9 +1,12 @@
 include ':app',
 
 
+
         ':lib_base_component',
         ':lib_base_module',
         ':lib_zxing',
+        ':lib_toasty',
+
 
 
         ':module_share',
