@@ -11,4 +11,5 @@ include ':app',
 
         ':module_share',
         ':module_login',
-        ':module_okhttp3'
+        ':module_okhttp3',
+        ':module_webserver'
