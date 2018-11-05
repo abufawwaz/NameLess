@@ -6,10 +6,12 @@ include ':app',
         ':lib_base_module',
         ':lib_zxing',
         ':lib_toasty',
+        ':lib_blurringview',
 
 
 
         ':module_share',
         ':module_login',
-        ':module_okhttp3',
-        ':module_webserver'
+//        ':module_okhttp3',
+        ':module_webserver',
+        ':module_blurringview'
