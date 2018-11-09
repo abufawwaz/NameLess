@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/lib_base_component" />
             <option value="$PROJECT_DIR$/lib_base_module" />
             <option value="$PROJECT_DIR$/lib_blurringview" />
+            <option value="$PROJECT_DIR$/lib_jsoncpp" />
             <option value="$PROJECT_DIR$/lib_toasty" />
             <option value="$PROJECT_DIR$/lib_zxing" />
             <option value="$PROJECT_DIR$/module_blurringview" />

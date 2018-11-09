@@ -1,4 +1,4 @@
-include ':app',
+include ':app', 
 
 
 
@@ -7,6 +7,7 @@ include ':app',
         ':lib_zxing',
         ':lib_toasty',
         ':lib_blurringview',
+        ':lib_jsoncpp',
 
 
 
