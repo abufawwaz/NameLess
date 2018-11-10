@@ -3,10 +3,13 @@ include ':base:base_component',
 
 
 
+
         ':lib:zxing',
         ':lib:toasty',
         ':lib:blurringview',
         ':lib:jsoncpp',
+        ':lib:bubbleview',
+
 
 
 
