@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         if (isRunAlone.toBoolean()) {
-            applicationId "com.sslyxhz.module.okhttp3demo"
+            applicationId "com.sslyxhz.module.login"
         }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
@@ -17,7 +17,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -33,7 +32,6 @@ android {
 
     sourceSets {
         main {
-            // 单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
             if (isRunAlone.toBoolean()) {
                 manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
             } else {
@@ -48,29 +46,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project (':base:base_module')
 
-    implementation project (':lib_base_module')
-
-    annotationProcessor deps.arouter_compiler
-
-    implementation deps.support.app_compat
-    implementation deps.constraint_layout
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation deps.okhttp3
-    implementation deps.gson
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.gson
-
-    implementation deps.retrofit.adapters
-    implementation deps.retrofit.adapter_rxjava
-
-//    implementation deps.rxjava2
+    annotationProcessor deps.arouter_compiler
 }

@@ -45,7 +45,7 @@ dependencies {
 
     implementation deps.support.app_compat
 
-    implementation project(':lib_base_module')
-    runtimeOnly project(':module_login')
-    runtimeOnly project(':module_share')
+    implementation project(':base:base_module')
+    runtimeOnly project(':module:login')
+    runtimeOnly project(':module:share')
 }

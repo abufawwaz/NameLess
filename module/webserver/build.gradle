@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         if (isRunAlone.toBoolean()) {
-            applicationId "com.sslyxhz.module.blurringviewdemo"
+            applicationId "com.sslyxhz.module.webserver"
         }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
@@ -23,9 +23,6 @@ android {
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
             }
         }
-
-        renderscriptTargetApi 21
-        renderscriptSupportModeEnabled true
     }
 
     compileOptions {
@@ -35,6 +32,7 @@ android {
 
     sourceSets {
         main {
+            // 单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
             if (isRunAlone.toBoolean()) {
                 manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
             } else {
@@ -42,7 +40,7 @@ android {
             }
         }
     }
-
+    
     buildTypes {
         release {
             minifyEnabled false
@@ -54,13 +52,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project (':base:base_module')
 
-    implementation project(':lib_blurringview')
+    annotationProcessor deps.arouter_compiler
 
-    implementation deps.support.v4
-    implementation deps.support.app_compat
-    implementation deps.constraint_layout
 
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

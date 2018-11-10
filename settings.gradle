@@ -1,18 +1,19 @@
-include ':app', 
+include ':base:base_component',
+        ':base:base_module',
 
 
 
-        ':lib_base_component',
-        ':lib_base_module',
-        ':lib_zxing',
-        ':lib_toasty',
-        ':lib_blurringview',
-        ':lib_jsoncpp',
+        ':lib:zxing',
+        ':lib:toasty',
+        ':lib:blurringview',
+        ':lib:jsoncpp',
 
 
 
-        ':module_share',
-        ':module_login',
-//        ':module_okhttp3',
-        ':module_webserver',
-        ':module_blurringview'
+        ':module:share',
+        ':module:login',
+        ':module:okhttp3demo',
+        ':module:webserver',
+        ':module:blurringdemo',
+
+        ':app'

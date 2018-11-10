@@ -1,11 +1,20 @@
-apply plugin: 'com.android.library'
+if (isRunAlone.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion build_versions.target_sdk
 
     defaultConfig {
+        if (isRunAlone.toBoolean()) {
+            applicationId "com.sslyxhz.module.blurringviewdemo"
+        }
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -14,11 +23,24 @@ android {
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
             }
         }
+
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            if (isRunAlone.toBoolean()) {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
     }
 
     buildTypes {
@@ -27,23 +49,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api deps.arouter_api
-    // arouter-compiler 的注解依赖需要所有使用 ARouter 的 model 都添加依赖
-    annotationProcessor deps.arouter_compiler
+    implementation project(':lib:blurringview')
 
-
+    implementation deps.support.v4
+    implementation deps.support.app_compat
+    implementation deps.constraint_layout
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    
-    
-    api deps.constraint_layout
-
-    api project (':lib_base_component')
 }
