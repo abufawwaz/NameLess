@@ -7,7 +7,7 @@ android {
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner deps.test.junit_runner
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -36,13 +36,6 @@ dependencies {
     // arouter-compiler 的注解依赖需要所有使用 ARouter 的 model 都添加依赖
     annotationProcessor deps.arouter_compiler
 
-
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    
-    
     api deps.constraint_layout
 
     api project (':base:base_component')

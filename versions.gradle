@@ -39,6 +39,15 @@ versions.arouter_api = "1.3.1"
 
 def deps = [:]
 
+
+def test = [:]
+test.junit = "junit:junit:4.12"
+test.runner = "com.android.support.test:runner:1.0.2"
+test.espresso = "com.android.support.test.espresso:espresso-core:3.0.2"
+test.junit_runner = "android.support.test.runner.AndroidJUnitRunner"
+deps.test = test
+
+
 def support = [:]
 support.annotations = "com.android.support:support-annotations:$versions.support"
 support.app_compat = "com.android.support:appcompat-v7:$versions.support"

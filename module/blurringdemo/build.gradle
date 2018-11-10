@@ -54,14 +54,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project (':base:base_module')
 
     implementation project(':lib:blurringview')
 
     implementation deps.support.v4
     implementation deps.support.app_compat
     implementation deps.constraint_layout
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
