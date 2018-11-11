@@ -6,36 +6,36 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 
 /**
- * 气泡样式的TextView控件
+ * 气泡样式的FrameLayout布局
  * 支持自定义气泡样式
  *
- * Created by caijw on 2016/6/1.
+ * Created by caijw on 2016/5/26.
  * https://github.com/cpiz/BubbleView
  */
-public class BubbleTextView extends TextView implements BubbleStyle, BubbleCallback {
+@SuppressWarnings("unused")
+public class BubbleFrameLayout extends FrameLayout implements BubbleStyle, BubbleCallback {
     private BubbleImpl mBubbleImpl = new BubbleImpl();
 
-    public BubbleTextView(Context context) {
+    public BubbleFrameLayout(Context context) {
         super(context);
         init(context, null);
     }
 
-    public BubbleTextView(Context context, AttributeSet attrs) {
+    public BubbleFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public BubbleTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BubbleFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
-    @SuppressWarnings("unused")
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public BubbleTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public BubbleFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
@@ -51,12 +51,12 @@ public class BubbleTextView extends TextView implements BubbleStyle, BubbleCallb
     }
 
     @Override
-    public void setArrowDirection(BubbleStyle.ArrowDirection arrowDirection) {
+    public void setArrowDirection(ArrowDirection arrowDirection) {
         mBubbleImpl.setArrowDirection(arrowDirection);
     }
 
     @Override
-    public BubbleStyle.ArrowDirection getArrowDirection() {
+    public ArrowDirection getArrowDirection() {
         return mBubbleImpl.getArrowDirection();
     }
 

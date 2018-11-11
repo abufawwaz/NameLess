@@ -4,20 +4,21 @@ include ':base:base_component',
 
 
 
-        ':lib:zxing',
-        ':lib:toasty',
-        ':lib:blurringview',
-        ':lib:jsoncpp',
+        //':lib:zxing',
+        //':lib:blurringview',
+        //':lib:jsoncpp',
+        //':lib:toasty',
         ':lib:bubbleview',
+        //':module:blurringdemo',
 
 
 
 
         ':module:share',
         ':module:login',
-        ':module:okhttp3demo',
+        //':module:okhttp3demo',
         ':module:webserver',
-        ':module:blurringdemo',
+        //':module:bubbleviewdemo',
 
 
 
